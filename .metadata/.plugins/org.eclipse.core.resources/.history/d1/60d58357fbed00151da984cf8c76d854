@@ -1,0 +1,87 @@
+package javaFXsound;
+
+import java.io.File;
+import javafx.application.Application;
+import javafx.stage.Stage;
+import javafx.scene.Group;
+import javafx.scene.Scene;
+import javafx.scene.control.Slider;
+import javafx.scene.media.Media;
+import javafx.scene.media.MediaPlayer;
+import javafx.scene.media.MediaView;
+import javafx.scene.paint.Color;
+import javafx.scene.layout.VBox;
+
+
+
+public class SoundPlayer extends Application {
+	
+	private File inputFile1;
+	private Media media;
+
+	public static void main(String[] args){
+		launch(args);
+	}
+	
+	//@Override
+	public void start(Stage stage) throws Exception{
+		stage.setTitle("Music Player");
+		Group root = new Group();
+		
+	
+		//setting the file path
+	    try{
+	    	inputFile1 = new File("src\\audio\\DunkedOn.mp3");
+			//inputFile1 = new File("src\\audio\\Error.mp3");
+	    
+			//converting the file path to a URI so media can read it
+			String fileURI = inputFile1.toURI().toString();
+			System.out.println("the URI is " + inputFile1);
+	    	media = new Media(fileURI);
+	    }catch (Exception e) {
+            //e.printStackTrace();
+            System.out.println("the file is not found");
+            inputFile1 = new File("src\\audio\\Error.mp3");
+            String fileURI = inputFile1.toURI().toString();
+            media = new Media(fileURI);
+            //System.exit(1);
+        }
+	    
+	    
+	    MediaPlayer player = new MediaPlayer(media);
+	    MediaView view = new MediaView(player);
+	
+	    final VBox vbox = new VBox();
+	    Slider slider = new Slider();
+	    
+	    vbox.getChildren().add(slider);
+	    root.getChildren().add(vbox);
+	    root.getChildren().add(view);
+	    
+	    Scene scene = new Scene(root, 400, 400, Color.rgb(0,0,150));
+	    stage.setScene(scene);
+	    stage.show();
+	    player.play();
+	    
+	    player.setOnReady(new Runnable(){
+	    	//@override
+	    	public void run(){
+	    		int w = 400;
+	    		int h = 400;
+	    		//int w = player.getMedia().getWidth();
+	    		//int h = player.getMedia().getHeight();
+	    		
+	    		stage.setMinWidth(w);
+	    		stage.setMinHeight(h);
+	    		
+	    		vbox.setMinSize(w, 100);
+	    	}
+	    	
+	    	
+	    });
+	    
+	}
+		
+		
+	}
+

@@ -24,11 +24,13 @@ public class MakeSound {
     }
     
     /**
-     * @param filename the name of the file that is going to be played
+     *  filename the name of the file that is going to be played
+     *  only works for .wav files
      */
     public void playSound(String filename){
 
         String strFilename = filename;
+        System.out.println("do the sound");
 
         try {
             soundFile = new File(strFilename);
