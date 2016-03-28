@@ -45,7 +45,7 @@ public class SoundPlayer extends Application {
 	
 		//setting the file path
 	    try{
-	    	inputFile1 = new File("src\\audio\\DunkedOn.mp3");
+	    	inputFile1 = new File("src\\audio\\Alarm Beat.mp3");
 	    
 			//converting the file path to a URI so media can read it
 			String fileURI = inputFile1.toURI().toString();
@@ -75,14 +75,14 @@ public class SoundPlayer extends Application {
 	    root.setOnMouseExited(new EventHandler<MouseEvent>(){
 	    	@Override
 	    	public void handle(MouseEvent mouseEvent){
-	    		slideOut.play();
+	    		//slideOut.play();
 	    	}
 	    });
 	    
 	    root.setOnMouseEntered(new EventHandler<MouseEvent>(){
 	    	@Override
 	    	public void handle(MouseEvent mouseEvent){
-	    		slideIn.play();
+	    		//slideIn.play();
 	    	}
 	    });
 	    
@@ -95,25 +95,26 @@ public class SoundPlayer extends Application {
 	    
 	    for ( int i=0 ; i<rects.length; i++){
 	    	rects[i] = new Rectangle();
-	    	rects[i].setFill(Color.rgb(0, 150, 0));
+	    	rects[i].setFill(Color.rgb(255,255,255));
 	    	hbox.getChildren().add(rects[i]);
 	    }
+	    vbox.getChildren().add(slider);
 	    vbox.getChildren().add(hbox);
 	    
 	    root.getChildren().add(view);
-	    vbox.getChildren().add(slider);
 	    root.getChildren().add(vbox);
 	    
-	    Scene scene = new Scene(root, 650, 600, Color.rgb(0,0,150));
+	    Scene scene = new Scene(root, 650, 600, Color.rgb(0,0,0));
 	    stage.setScene(scene);
 	    stage.show();
+	    stage.setFullScreen(true);
 	    player.play();
 	    
 	    player.setOnReady(new Runnable(){
 	    	@Override
 	    	public void run(){
-	    		int w = 400;
-	    		int h = 400;
+	    		int w = 1000;
+	    		int h = 50;
 	    		//int w = player.getMedia().getWidth();
 	    		//int h = player.getMedia().getHeight();
 	    		
