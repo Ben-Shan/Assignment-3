@@ -2,4 +2,7 @@
 <qualifiedTypeNameHistroy>
 <fullyQualifiedTypeName name="java.io.File"/>
 <fullyQualifiedTypeName name="javafx.scene.control.Slider"/>
+<fullyQualifiedTypeName name="javafx.beans.value.ChangeListener"/>
+<fullyQualifiedTypeName name="javax.xml.datatype.Duration"/>
+<fullyQualifiedTypeName name="javafx.animation.Timeline"/>
 </qualifiedTypeNameHistroy>
