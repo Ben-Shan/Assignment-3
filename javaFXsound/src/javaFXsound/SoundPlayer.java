@@ -30,9 +30,13 @@ public class SoundPlayer extends Application {
 	
 	private File inputFile1;
 	private Media media;
+	
+	//create an instance of the visuals class
+	
 
 	public static void main(String[] args){
 		launch(args);
+		
 	}
 	
 	@Override
@@ -41,11 +45,13 @@ public class SoundPlayer extends Application {
 		stage.setTitle("Music Player");
 		//creating a group node called root
 		Group root = new Group();
+		//Group root2 = new Group();
 		
-	
+		Visuals visual = new Visuals();
+		
 		//setting the file path
 	    try{
-	    	inputFile1 = new File("src\\audio\\Alarm Beat.mp3");
+	    	inputFile1 = new File("src\\audio\\1.mp3");
 	    
 			//converting the file path to a URI so media can read it
 			String fileURI = inputFile1.toURI().toString();
@@ -72,26 +78,31 @@ public class SoundPlayer extends Application {
 	     */
 	    final Timeline slideIn = new Timeline();
 	    final Timeline slideOut = new Timeline();
-	    root.setOnMouseExited(new EventHandler<MouseEvent>(){
+	    
+	    Scene scene = new Scene(root, 1000, 600, Color.rgb(0,0,0));
+	    
+	    scene.setOnMouseExited(new EventHandler<MouseEvent>(){
 	    	@Override
 	    	public void handle(MouseEvent mouseEvent){
-	    		//slideOut.play();
+	    		slideOut.play();
 	    	}
 	    });
 	    
-	    root.setOnMouseEntered(new EventHandler<MouseEvent>(){
+	    scene.setOnMouseEntered(new EventHandler<MouseEvent>(){
 	    	@Override
 	    	public void handle(MouseEvent mouseEvent){
-	    		//slideIn.play();
+	    		slideIn.play();
 	    	}
 	    });
 	    
 	    final VBox vbox = new VBox();
 	    final Slider slider = new Slider();
 	    
-	    final HBox hbox = new HBox(2);
+	    final HBox hbox = new HBox(1);  //creating the Hbox and setting the spacing
 	    final int bands = player.getAudioSpectrumNumBands();
 	    final Rectangle[] rects = new Rectangle[bands];
+	    
+	    visual.visuals(bands);
 	    
 	    for ( int i=0 ; i<rects.length; i++){
 	    	rects[i] = new Rectangle();
@@ -104,26 +115,33 @@ public class SoundPlayer extends Application {
 	    root.getChildren().add(view);
 	    root.getChildren().add(vbox);
 	    
-	    Scene scene = new Scene(root, 650, 600, Color.rgb(0,0,0));
+//	    Scene scene = new Scene(root, 650, 600, Color.rgb(0,0,0));
 	    stage.setScene(scene);
 	    stage.show();
-	    stage.setFullScreen(true);
+	    
+	    //stage.setFullScreen(true);
 	    player.play();
 	    
 	    player.setOnReady(new Runnable(){
 	    	@Override
 	    	public void run(){
 	    		int w = 1000;
-	    		int h = 50;
+	    		int h = 200;
 	    		//int w = player.getMedia().getWidth();
 	    		//int h = player.getMedia().getHeight();
 	    		
 	    		hbox.setMinWidth(w);
+	    		
 	    		int bandWidth = w/rects.length;
+	    		
+	    		System.out.println("rects.length is : " + rects.length);
+	    		
 	    		for(Rectangle r:rects){
 	    			r.setWidth(bandWidth);
 	    			r.setHeight(2);
 	    		}
+	    		
+	    		System.out.println("bandwidth is : " + bandWidth);
 	    		
 	    		stage.setMinWidth(w);
 	    		stage.setMinHeight(h);
@@ -137,23 +155,23 @@ public class SoundPlayer extends Application {
 	    		
 	    		slideOut.getKeyFrames().addAll(
 	    				new KeyFrame(new Duration(0),
-	    						new KeyValue(vbox.translateYProperty(), h-100),
-	    						new KeyValue(vbox.opacityProperty(), 0.9)
+	    						new KeyValue(slider.translateYProperty(), h-100),
+	    						new KeyValue(slider.opacityProperty(), 0.9)
 	    						),
 	    				new KeyFrame(new Duration(300),
-	    						new KeyValue(vbox.translateYProperty(), h),
-	    						new KeyValue(vbox.opacityProperty(), 0.0)
+	    						new KeyValue(slider.translateYProperty(), h),
+	    						new KeyValue(slider.opacityProperty(), 0.0)
 	    						)
 	    		);
 	    		
 	    		slideIn.getKeyFrames().addAll(
 	    				new KeyFrame(new Duration(0),
-	    						new KeyValue(vbox.translateYProperty(), h),
-	    						new KeyValue(vbox.opacityProperty(), 0.0)
+	    						new KeyValue(slider.translateYProperty(), h),
+	    						new KeyValue(slider.opacityProperty(), 0.0)
 	    						),
 	    				new KeyFrame(new Duration(300),
-	    						new KeyValue(vbox.translateYProperty(), h-100),
-	    						new KeyValue(vbox.opacityProperty(), 0.9)
+	    						new KeyValue(slider.translateYProperty(), h-100),
+	    						new KeyValue(slider.opacityProperty(), 0.9)
 	    						)
 	    		);
 	    	}
@@ -177,16 +195,16 @@ public class SoundPlayer extends Application {
             @Override
             public void spectrumDataUpdate(double v, double v1, float[] mags, float[] floats1) {
             	for( int i=0; i<rects.length; i++){
-            		double h = mags[i]+60;
-            		if(h>2){
-            			rects[i].setHeight(h);
+            		double rectHeight = mags[i]+60;
+            		if(rectHeight>1){
+            			rects[i].setHeight(rectHeight);
+            		}
+            		if(rectHeight<1){
+            			rects[i].setHeight(2);
             		}
             	}
-            }
+            }            
 	    });
 	}
 }
-
-
-
 

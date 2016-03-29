@@ -1,0 +1,6 @@
+package javaFXsound;
+
+public class Bars extends Visuals{
+
+	
+}

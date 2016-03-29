@@ -21,7 +21,7 @@ import javafx.stage.Stage;
 public final class choosefile extends Application {
  
 	
-	private File ChooseSong;
+	public File chooseSong;
 
  
     @Override
@@ -79,12 +79,12 @@ public final class choosefile extends Application {
     }
             
  
-    private void openFile(File file) {
+    public void openFile(File file) {
         try {
            
             Desktop.getDesktop();
-            ChooseSong=file;
-            System.out.println(ChooseSong);
+            chooseSong=file;
+            System.out.println(chooseSong);
             
         }
         	finally

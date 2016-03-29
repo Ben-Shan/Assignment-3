@@ -1,0 +1,11 @@
+package javaFXsound;
+
+public class Visuals extends SoundPlayer{
+
+	public static void main(String[] args) {
+
+	}
+
+	
+	
+}
