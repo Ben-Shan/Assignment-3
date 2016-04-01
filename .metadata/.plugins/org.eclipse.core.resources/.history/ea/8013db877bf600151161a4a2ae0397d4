@@ -1,0 +1,53 @@
+package javaFXsound;
+
+
+import javafx.scene.layout.HBox;
+import javafx.scene.layout.VBox;
+import javafx.scene.paint.Color;
+import javafx.scene.shape.Rectangle;
+
+public class BarVis extends Visuals{
+
+	
+	public static void main(String[] args) {
+	}
+	
+	
+	
+	public int bands;
+	
+	public BarVis(){
+	}
+	
+	public void visuals(int bands){
+	
+		final VBox vbox = new VBox();
+		final HBox hbox = new HBox(1);  //creating the Hbox and setting the spacing to 1
+		//creating the rectangle
+		final Rectangle[] rects = new Rectangle[bands];
+		//creating the array of rectangles
+		for ( int i=0 ; i<rects.length; i++){
+	    	rects[i] = new Rectangle();
+	    	rects[i].setFill(Color.rgb(255,255,255));
+	    	hbox.getChildren().add(rects[i]);
+		}
+		
+		vbox.getChildren().add(hbox);
+		int w = 1000;
+		int h = 200;
+		int bandWidth = w/rects.length;
+		for(Rectangle r:rects){
+			r.setWidth(bandWidth);
+			r.setHeight(2);
+		}
+		
+		vbox.setMinSize(w, 100);
+		vbox.setTranslateY(h-50);
+		
+	}
+	
+	
+	public void print(){
+		System.out.println("bands are : " + bands);
+	}	
+}

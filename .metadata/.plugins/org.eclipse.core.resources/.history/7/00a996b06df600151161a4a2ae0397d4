@@ -1,0 +1,24 @@
+package javaFXsound;
+
+import javafx.stage.Stage;
+
+public class Visuals{
+
+	public int bands;
+	
+	public static void main(String[] args) {
+	}
+	
+    public void start(Stage visStage){
+		visStage.setTitle("Visualiser");
+	}
+
+	
+	
+	public void visuals(int bands){
+		
+		BarVis bars = new BarVis(bands);
+		bars.print();
+	}
+	
+}

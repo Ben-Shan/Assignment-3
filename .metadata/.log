@@ -240,3 +240,159 @@ user global configuration and to define the default location to store repositori
 not correct please set the HOME environment variable and restart Eclipse. Otherwise Git for Windows and
 EGit might behave differently since they see different configuration options.
 This warning can be switched off on the Team > Git > Confirmations and Warnings preference page.
+!SESSION 2016-03-30 12:10:59.520 -----------------------------------------------
+eclipse.buildId=4.5.2.M20160212-1500
+java.version=1.8.0_73
+java.vendor=Oracle Corporation
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=en_GB
+Framework arguments:  -product org.eclipse.epp.package.java.product
+Command-line arguments:  -os win32 -ws win32 -arch x86_64 -product org.eclipse.epp.package.java.product
+
+!ENTRY org.eclipse.equinox.ds 1 0 2016-03-30 12:11:10.907
+!MESSAGE Could not bind a reference of component org.eclipse.fx.core.internal.JUtilLoggerFactory. The reference is: Reference[name = registerHandler, interface = java.util.logging.Handler, policy = dynamic, policy-option = greedy, cardinality = 0..n, target = null, bind = registerHandler, unbind = unregisterHandler, updated = null]
+
+!ENTRY org.eclipse.egit.ui 2 0 2016-03-30 12:11:15.342
+!MESSAGE Warning: The environment variable HOME is not set. The following directory will be used to store the Git
+user global configuration and to define the default location to store repositories: 'C:\Users\Des'. If this is
+not correct please set the HOME environment variable and restart Eclipse. Otherwise Git for Windows and
+EGit might behave differently since they see different configuration options.
+This warning can be switched off on the Team > Git > Confirmations and Warnings preference page.
+
+!ENTRY org.eclipse.equinox.ds 1 0 2016-03-30 12:11:18.583
+!MESSAGE Could not bind a reference of component org.eclipse.fx.ide.css.cssext.ui.internal.DefaultCssExtProvider. The reference is: Reference[name = ICSSExtModelProvider, interface = org.eclipse.fx.ide.css.cssext.ICSSExtModelProvider, policy = dynamic, cardinality = 0..n, target = null, bind = bindCssExtensionModelProvider, unbind = unbindCssExtensionModelProvider]
+!SESSION 2016-03-31 14:21:49.357 -----------------------------------------------
+eclipse.buildId=4.5.2.M20160212-1500
+java.version=1.8.0_73
+java.vendor=Oracle Corporation
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=en_GB
+Framework arguments:  -product org.eclipse.epp.package.java.product
+Command-line arguments:  -os win32 -ws win32 -arch x86_64 -product org.eclipse.epp.package.java.product
+
+!ENTRY org.eclipse.equinox.ds 1 0 2016-03-31 14:22:12.219
+!MESSAGE Could not bind a reference of component org.eclipse.fx.core.internal.JUtilLoggerFactory. The reference is: Reference[name = registerHandler, interface = java.util.logging.Handler, policy = dynamic, policy-option = greedy, cardinality = 0..n, target = null, bind = registerHandler, unbind = unregisterHandler, updated = null]
+
+!ENTRY org.eclipse.egit.ui 2 0 2016-03-31 14:22:18.262
+!MESSAGE Warning: The environment variable HOME is not set. The following directory will be used to store the Git
+user global configuration and to define the default location to store repositories: 'C:\Users\Des'. If this is
+not correct please set the HOME environment variable and restart Eclipse. Otherwise Git for Windows and
+EGit might behave differently since they see different configuration options.
+This warning can be switched off on the Team > Git > Confirmations and Warnings preference page.
+
+!ENTRY org.eclipse.equinox.ds 1 0 2016-03-31 14:22:23.573
+!MESSAGE Could not bind a reference of component org.eclipse.fx.ide.css.cssext.ui.internal.DefaultCssExtProvider. The reference is: Reference[name = ICSSExtModelProvider, interface = org.eclipse.fx.ide.css.cssext.ICSSExtModelProvider, policy = dynamic, cardinality = 0..n, target = null, bind = bindCssExtensionModelProvider, unbind = unbindCssExtensionModelProvider]
+
+!ENTRY org.eclipse.recommenders.types.rcp 1 4 2016-04-01 12:30:38.403
+!MESSAGE Full project indexing required:
+  [+] D:\programs\Jre08\lib\charsets.jar
+  [+] D:\programs\Jre08\lib\ext\access-bridge-64.jar
+  [+] D:\programs\Jre08\lib\ext\cldrdata.jar
+  [+] D:\programs\Jre08\lib\ext\dnsns.jar
+  [+] D:\programs\Jre08\lib\ext\jaccess.jar
+  [+] D:\programs\Jre08\lib\ext\jfxrt.jar
+  [+] D:\programs\Jre08\lib\ext\localedata.jar
+  [+] D:\programs\Jre08\lib\ext\nashorn.jar
+  [+] D:\programs\Jre08\lib\ext\sunec.jar
+  [+] D:\programs\Jre08\lib\ext\sunjce_provider.jar
+  [+] D:\programs\Jre08\lib\ext\sunmscapi.jar
+  [+] D:\programs\Jre08\lib\ext\sunpkcs11.jar
+  [+] D:\programs\Jre08\lib\ext\zipfs.jar
+  [+] D:\programs\Jre08\lib\jce.jar
+  [+] D:\programs\Jre08\lib\jfr.jar
+  [+] D:\programs\Jre08\lib\jsse.jar
+  [+] D:\programs\Jre08\lib\resources.jar
+  [+] D:\programs\Jre08\lib\rt.jar
+  [+] G:\dev\eclipse\eclipse\plugins\org.eclipse.fx.ide.css.jfx8_2.3.0.201603030809.jar
+
+!STACK 0
+org.eclipse.recommenders.utils.Logs$LogTraceException
+	at org.eclipse.recommenders.utils.Logs$LogTraceException.newTrace(Logs.java:381)
+	at org.eclipse.recommenders.utils.Logs.log(Logs.java:134)
+	at org.eclipse.recommenders.internal.types.rcp.ProjectTypesIndex.needsRebuild(ProjectTypesIndex.java:167)
+	at org.eclipse.recommenders.internal.types.rcp.ProjectTypesIndex.startUp(ProjectTypesIndex.java:122)
+	at com.google.common.util.concurrent.AbstractIdleService$2$1.run(AbstractIdleService.java:54)
+	at com.google.common.util.concurrent.Callables$3.run(Callables.java:93)
+	at java.lang.Thread.run(Unknown Source)
+
+!ENTRY org.eclipse.recommenders.types.rcp 1 4 2016-04-01 13:01:28.956
+!MESSAGE Full project indexing required:
+  [+] D:\programs\Jre08\lib\charsets.jar
+  [+] D:\programs\Jre08\lib\ext\access-bridge-64.jar
+  [+] D:\programs\Jre08\lib\ext\cldrdata.jar
+  [+] D:\programs\Jre08\lib\ext\dnsns.jar
+  [+] D:\programs\Jre08\lib\ext\jaccess.jar
+  [+] D:\programs\Jre08\lib\ext\jfxrt.jar
+  [+] D:\programs\Jre08\lib\ext\localedata.jar
+  [+] D:\programs\Jre08\lib\ext\nashorn.jar
+  [+] D:\programs\Jre08\lib\ext\sunec.jar
+  [+] D:\programs\Jre08\lib\ext\sunjce_provider.jar
+  [+] D:\programs\Jre08\lib\ext\sunmscapi.jar
+  [+] D:\programs\Jre08\lib\ext\sunpkcs11.jar
+  [+] D:\programs\Jre08\lib\ext\zipfs.jar
+  [+] D:\programs\Jre08\lib\jce.jar
+  [+] D:\programs\Jre08\lib\jfr.jar
+  [+] D:\programs\Jre08\lib\jsse.jar
+  [+] D:\programs\Jre08\lib\resources.jar
+  [+] D:\programs\Jre08\lib\rt.jar
+  [+] G:\dev\eclipse\eclipse\plugins\org.eclipse.fx.ide.css.jfx8_2.3.0.201603030809.jar
+
+!STACK 0
+org.eclipse.recommenders.utils.Logs$LogTraceException
+	at org.eclipse.recommenders.utils.Logs$LogTraceException.newTrace(Logs.java:381)
+	at org.eclipse.recommenders.utils.Logs.log(Logs.java:134)
+	at org.eclipse.recommenders.internal.types.rcp.ProjectTypesIndex.needsRebuild(ProjectTypesIndex.java:167)
+	at org.eclipse.recommenders.internal.types.rcp.ProjectTypesIndex.startUp(ProjectTypesIndex.java:122)
+	at com.google.common.util.concurrent.AbstractIdleService$2$1.run(AbstractIdleService.java:54)
+	at com.google.common.util.concurrent.Callables$3.run(Callables.java:93)
+	at java.lang.Thread.run(Unknown Source)
+
+!ENTRY org.eclipse.recommenders.rcp 4 18 2016-04-01 13:39:19.690
+!MESSAGE Failed to resolve selection in ‘=MultiScreenFX/src<multiscreeninput{MainWindowController.java’ at offset 1,746.
+!STACK 0
+org.eclipse.recommenders.utils.Logs$LogTraceException
+	at org.eclipse.recommenders.utils.Logs$LogTraceException.newTrace(Logs.java:381)
+	at org.eclipse.recommenders.utils.Logs.log(Logs.java:134)
+	at org.eclipse.recommenders.internal.rcp.JavaElementSelections.resolveJavaElementFromTypeRootInEditor(JavaElementSelections.java:164)
+	at org.eclipse.recommenders.internal.rcp.JavaElementSelections.resolveJavaElementFromEditor(JavaElementSelections.java:119)
+	at org.eclipse.recommenders.internal.rcp.JavaElementSelections.resolveJavaElementFromEditor(JavaElementSelections.java:102)
+	at org.eclipse.recommenders.internal.rcp.JavaElementSelectionService.handleSelectionInEditor(JavaElementSelectionService.java:108)
+	at org.eclipse.recommenders.internal.rcp.JavaElementSelectionService.access$1(JavaElementSelectionService.java:105)
+	at org.eclipse.recommenders.internal.rcp.JavaElementSelectionService$1.run(JavaElementSelectionService.java:82)
+	at java.util.concurrent.Executors$RunnableAdapter.call(Unknown Source)
+	at java.util.concurrent.FutureTask.run(Unknown Source)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.access$201(Unknown Source)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(Unknown Source)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source)
+	at java.lang.Thread.run(Unknown Source)
+
+!ENTRY org.eclipse.recommenders.types.rcp 1 4 2016-04-01 22:04:51.453
+!MESSAGE Full project indexing required:
+  [+] D:\programs\Jre08\lib\charsets.jar
+  [+] D:\programs\Jre08\lib\ext\access-bridge-64.jar
+  [+] D:\programs\Jre08\lib\ext\cldrdata.jar
+  [+] D:\programs\Jre08\lib\ext\dnsns.jar
+  [+] D:\programs\Jre08\lib\ext\jaccess.jar
+  [+] D:\programs\Jre08\lib\ext\jfxrt.jar
+  [+] D:\programs\Jre08\lib\ext\localedata.jar
+  [+] D:\programs\Jre08\lib\ext\nashorn.jar
+  [+] D:\programs\Jre08\lib\ext\sunec.jar
+  [+] D:\programs\Jre08\lib\ext\sunjce_provider.jar
+  [+] D:\programs\Jre08\lib\ext\sunmscapi.jar
+  [+] D:\programs\Jre08\lib\ext\sunpkcs11.jar
+  [+] D:\programs\Jre08\lib\ext\zipfs.jar
+  [+] D:\programs\Jre08\lib\jce.jar
+  [+] D:\programs\Jre08\lib\jfr.jar
+  [+] D:\programs\Jre08\lib\jsse.jar
+  [+] D:\programs\Jre08\lib\resources.jar
+  [+] D:\programs\Jre08\lib\rt.jar
+  [+] G:\dev\eclipse\eclipse\plugins\org.eclipse.fx.ide.css.jfx8_2.3.0.201603030809.jar
+
+!STACK 0
+org.eclipse.recommenders.utils.Logs$LogTraceException
+	at org.eclipse.recommenders.utils.Logs$LogTraceException.newTrace(Logs.java:381)
+	at org.eclipse.recommenders.utils.Logs.log(Logs.java:134)
+	at org.eclipse.recommenders.internal.types.rcp.ProjectTypesIndex.needsRebuild(ProjectTypesIndex.java:167)
+	at org.eclipse.recommenders.internal.types.rcp.ProjectTypesIndex.startUp(ProjectTypesIndex.java:122)
+	at com.google.common.util.concurrent.AbstractIdleService$2$1.run(AbstractIdleService.java:54)
+	at com.google.common.util.concurrent.Callables$3.run(Callables.java:93)
+	at java.lang.Thread.run(Unknown Source)

@@ -1,0 +1,42 @@
+package javaFXsound;
+
+import javafx.scene.Group;
+import javafx.scene.Scene;
+import javafx.scene.media.MediaView;
+import javafx.scene.paint.Color;
+import javafx.stage.Stage;
+
+public class Visuals{
+
+	public int bands;
+	public Stage visStage;
+	public MediaView view;
+	
+	public Visuals(MediaView view1){
+		view1 = view;
+	}
+	
+	public static void main(String[] args) {
+	}
+	
+    public void start(){
+		visStage.setTitle("Visualiser");
+		
+		Group visGroup = new Group();
+		visGroup.getChildren().add(view);
+		//visGroup.getChildren().add(b.visuals());
+		Scene visScene = new Scene(visGroup, 1000, 500, Color.rgb(255,0,0));
+		
+		//final HBox hbox = new HBox(1);  //creating the Hbox and setting the spacing to 1
+		
+		
+		
+		visStage.setMinWidth(1000);
+		visStage.setMinHeight(500);
+		
+		visStage.setScene(visScene);
+		visStage.show();
+	}
+
+	
+}

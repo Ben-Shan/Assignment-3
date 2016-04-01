@@ -1,0 +1,69 @@
+package javaFXsound;
+
+
+import javafx.scene.layout.HBox;
+import javafx.scene.layout.VBox;
+import javafx.scene.media.MediaView;
+import javafx.scene.paint.Color;
+import javafx.scene.shape.Rectangle;
+
+public class BarVis extends Visuals{
+
+	
+	public BarVis(MediaView view1) {
+		super(view1);
+		// TODO Auto-generated constructor stub
+	}
+
+
+	public static void main(String[] args) {
+	}
+	
+	
+	final Rectangle[] rects = new Rectangle[128];
+	public int bands;
+	
+	/*public BarVis(){
+	}*/
+	
+	public VBox visuals(){
+	
+		final VBox vbox = new VBox();
+		final HBox hbox = new HBox(1);  //creating the Hbox and setting the spacing to 1
+		//creating the rectangle
+		//final Rectangle[] rects = new Rectangle[bands];
+		//creating the array of rectangles
+		for ( int i=0 ; i<rects.length; i++){
+	    	rects[i] = new Rectangle();
+	    	rects[i].setFill(Color.rgb(0,0,255));
+	    	hbox.getChildren().add(rects[i]);
+	    	
+		}
+		
+		vbox.getChildren().add(hbox);
+		int w = 1000;
+		int h = 200;
+		int bandWidth = w/rects.length;
+		for(Rectangle r:rects){
+			r.setWidth(bandWidth);
+			r.setHeight(2);
+			System.out.println("rects : " + r);
+		}
+		
+		vbox.setMinSize(w, 100);
+		vbox.setTranslateY(h-50);
+		return vbox;
+	}
+	
+	
+	public void drawBars(int i, double height){
+		
+		if(height>1){
+			rects[i].setHeight(height);
+		}
+		if(height<1){
+			rects[i].setHeight(2);
+	    }
+		//System.out.println("bar no : " + i + " at a height : " + height);
+	}
+}
