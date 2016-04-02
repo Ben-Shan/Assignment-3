@@ -14,7 +14,7 @@
       </HBox>
       <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
          <children>
-            <Button fx:id="button" mnemonicParsing="false" onAction="#openInputWindow" text="PLAY" />
+            <Button fx:id="button" mnemonicParsing="false" onAction="#openVisualiserWindow" text="PLAY" />
          </children>
       </HBox>
    </children>

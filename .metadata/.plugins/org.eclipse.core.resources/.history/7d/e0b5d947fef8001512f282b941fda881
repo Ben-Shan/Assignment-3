@@ -1,0 +1,12 @@
+package multiscreeninput;
+
+public class VisualController {
+	
+    private MainWindowController mainWindow;
+
+    
+    public void update(){
+    	
+    }
+
+}

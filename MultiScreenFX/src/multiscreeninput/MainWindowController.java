@@ -1,6 +1,9 @@
 package multiscreeninput;
 
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.Calendar;
+import java.util.List;
 
 import javafx.animation.AnimationTimer;
 import javafx.beans.property.StringProperty;
@@ -35,11 +38,14 @@ public class MainWindowController {
     @FXML
     Slider slider;
 
-    private int bands;
-    private ChildController childController;
+    private static int bands;
+   // private ChildController childController;
+    private List<VisualController> controllerList = new ArrayList<VisualController>();
+    
+    private double[] magArr;
     //private File inputFile;
     
-    public void openInputWindow(ActionEvent event) throws IOException {
+    public void openVisualiserWindow(ActionEvent event) throws IOException {
     	
     	System.out.println("should play : " + Main.getFile());
     	
@@ -50,15 +56,22 @@ public class MainWindowController {
     	Media media = new Media(fileURI);
     	
     	MediaPlayer player = new MediaPlayer(media);
-	    MediaView view = new MediaView(player);
+	    //MediaView view = new MediaView(player);
     	
 	    bands = player.getAudioSpectrumNumBands();
-	    final double[] bandArr = new double[bands];
+	    System.out.println("there are " + getBands() + " bands");
+	    magArr = new double[bands];
 	    
         FXMLLoader loader = new FXMLLoader(getClass().getResource("Child.fxml"));
         VBox newWindow = (VBox)loader.load();
-        childController = loader.getController();
-        childController.setMainWindow(this);
+        
+        
+        controllerList.add(loader.getController());
+      
+        for(VisualController v:controllerList){
+        	v.setMainWindow(this);
+        }
+        //controller.setMainWindow(this);
         Stage stage = new Stage();
         //stage.initModality(Modality.NONE);
         stage.initOwner(button.getScene().getWindow());
@@ -66,7 +79,7 @@ public class MainWindowController {
         stage.setScene(scene);
         stage.show();   
         //stage.setFullScreen(true);
-        //player.play();
+        player.play();
         
         //newWindow.getChildren().add(controller.update());
         
@@ -113,14 +126,14 @@ public class MainWindowController {
             public void spectrumDataUpdate(double v, double v1, float[] mags, float[] floats1) {
             	for( int i=0; i<bands; i++){
             		double magnitude = mags[i]+60;
-            		
-            		if(magnitude>1){
-            			bandArr[i] = magnitude;
+            		double magnitude2 = floats1[i];
+            		if(magnitude>0.2){
+            			magArr[i] = magnitude;
             		}
-            		if(magnitude<1){
-            			bandArr[i] = 2;
+            		if(magnitude<0.2){
+            			magArr[i] = 1;
             		}
-            		//System.out.println(bandArr[i]);
+            		//System.out.println("the magnitude is " + magArr[i]);
             	}
             }            
 	    });
@@ -128,24 +141,34 @@ public class MainWindowController {
     
     @FXML
     void initialize(){
+    	
     	new AnimationTimer()
         {
             public void handle(long currentNanoTime)
             {
-                if(childController != null){
-                	childController.update();
+                if(controllerList.size() != 0){
+                	final Calendar cal = Calendar.getInstance();
+                	for (VisualController v:controllerList){
+                    
+                		v.update(/*cal.getTime()*/);
+                	}
                 }
                 
             }
         }.start();
     }
     
-   /* public void handle(long currentNanoTime)
-    {
-    	System.out.println("in the handle");
-        childController.update();
-    }*/
     
+    
+    
+    
+    
+    
+  
+    
+    public double[] getMags(){
+    	return magArr;
+    }
 
     public int getBands(){
     	return bands;
