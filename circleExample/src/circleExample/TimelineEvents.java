@@ -37,7 +37,7 @@ public class TimelineEvents extends Application {
         Group p = new Group();
         Scene scene1 = new Scene(p);
         
-        width = 3000;
+        width = 2000;
         height = 1500;
         
         stage.setScene(scene1);
@@ -71,6 +71,7 @@ public class TimelineEvents extends Application {
             @Override
             public void handle(long l) {
                 text.setText(i.toString());
+                System.out.println("in handle with i= : " + i);
                 i++;
             }
  
