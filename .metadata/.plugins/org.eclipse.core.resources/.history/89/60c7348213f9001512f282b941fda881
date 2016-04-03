@@ -1,0 +1,16 @@
+package multiscreeninput;
+
+public class VisualController {
+	
+    protected MainWindowController mainWindow;
+
+    public void setMainWindow(MainWindowController mainWin){
+        mainWindow = mainWin;
+    	
+    }
+    
+    public void update(){
+    	System.out.println("calling update in base");
+    }
+
+}

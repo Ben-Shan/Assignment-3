@@ -1,0 +1,22 @@
+package javaFXsound;
+
+public class BarVis extends Visuals{
+
+	
+	public static void main(String[] args) {
+	}
+	
+	
+	
+	public int bands;
+	
+	public BarVis(int bands){
+		this.bands = bands;
+		
+	}
+	
+	public void print(){
+		System.out.println("bands are : " + bands);
+	}
+	
+}

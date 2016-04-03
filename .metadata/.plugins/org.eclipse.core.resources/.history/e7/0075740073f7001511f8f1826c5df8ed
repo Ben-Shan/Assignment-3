@@ -1,0 +1,9 @@
+package javaFXsound;
+
+public class CircleVis extends Visuals{
+
+	public static void main(String[] args) {
+
+	}
+
+}

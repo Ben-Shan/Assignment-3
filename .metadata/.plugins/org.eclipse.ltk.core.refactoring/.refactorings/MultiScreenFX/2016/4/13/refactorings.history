@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename type &apos;multiscreeninput.ChildController&apos; to &apos;BarController&apos;&#x0D;&#x0A;- Original project: &apos;MultiScreenFX&apos;&#x0D;&#x0A;- Original element: &apos;multiscreeninput.ChildController&apos;&#x0D;&#x0A;- Renamed element: &apos;multiscreeninput.BarController&apos;&#x0D;&#x0A;- Update references to refactored element&#x0D;&#x0A;- Update textual occurrences in comments and strings" description="Rename type &apos;ChildController&apos;" flags="589830" id="org.eclipse.jdt.ui.rename.type" input="/src&lt;multiscreeninput{ChildController.java[ChildController" matchStrategy="1" name="BarController" qualified="false" references="true" similarDeclarations="false" stamp="1459630273098" textual="false" version="1.0"/>
+</session>
