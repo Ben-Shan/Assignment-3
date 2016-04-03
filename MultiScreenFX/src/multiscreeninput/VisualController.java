@@ -6,11 +6,8 @@ public abstract class VisualController {
 
     public void setMainWindow(MainWindowController mainWin){
         mainWindow = mainWin;
-    	
     }
     
     public abstract void update();
     	
-    
-
 }

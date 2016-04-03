@@ -1,0 +1,56 @@
+package multiscreeninput;
+
+import java.util.Date;
+
+import javafx.event.ActionEvent;
+import javafx.fxml.FXML;
+import javafx.scene.control.Button;
+import javafx.scene.control.Slider;
+import javafx.scene.control.TextField;
+import javafx.scene.layout.HBox;
+import javafx.scene.layout.Pane;
+import javafx.scene.layout.VBox;
+import javafx.scene.paint.Color;
+import javafx.scene.shape.Rectangle;
+
+public class BarController extends VisualController{
+
+    
+    @FXML
+    HBox visHbox;
+   
+
+    public Rectangle[] rects;
+  
+    @FXML
+    void initialize() {
+    	
+    	rects = new Rectangle[128];
+    	for ( int i=0 ; i<rects.length; i++){
+	    	rects[i] = new Rectangle();
+	    	rects[i].setHeight(2);
+	    	rects[i].setWidth(4);
+	    	rects[i].setFill(Color.rgb((i*2),0,255-(i*2)));
+	    
+	    	visHbox.setSpacing(2);
+	    	visHbox.getChildren().add(rects[i]);
+	    	System.out.println("yo " + i);
+	   
+	    }
+    	
+    }
+    
+    
+    public void update(){
+    	
+    	double[] mags = mainWindow.getMags();
+    	
+    	//System.out.println("in the update method" + date.toString());
+    	
+    	for ( int i=0 ; i<mags.length; i++){
+	    	rects[i].setHeight(mags[i]*3);
+    	}
+     }
+    
+
+}
