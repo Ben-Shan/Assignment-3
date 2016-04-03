@@ -1,0 +1,13 @@
+package multiscreeninput;
+
+public class CircleController extends VisualController {
+
+	
+	
+	
+	public void update() {
+		double[] mags = mainWindow.getMags();
+		
+	}
+
+}

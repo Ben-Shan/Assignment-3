@@ -15,30 +15,19 @@ import javafx.scene.shape.Rectangle;
 
 public class BarController extends VisualController{
 
-    @FXML
-    TextField text;
 
-    @FXML
-    Button button;
     
     /*@FXML
     private Pane visPane;*/
     
     @FXML
     HBox visHbox;
-    
-    /*@FXML
-    HBox visHbox2;*/
-    
-    /*@FXML
-    Slider slider;*/
-    
    
     //public HBox hbox;
-    private Rectangle rectangle;
+    //private Rectangle rectangle;
     //private MainWindowController mainWindow;
     public Rectangle[] rects;
-    private int i = 0;
+  
     @FXML
     void initialize() {
     	/*rectangle = new Rectangle(0, 0, 250, 250);

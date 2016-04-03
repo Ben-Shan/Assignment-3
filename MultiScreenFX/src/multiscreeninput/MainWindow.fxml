@@ -12,9 +12,10 @@
             <Label fx:id="label" text="Use to button to edit data" wrapText="true" />
          </children>
       </HBox>
-      <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
+      <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" spacing="20.0">
          <children>
-            <Button fx:id="button" mnemonicParsing="false" onAction="#openVisualiserWindow" text="PLAY" />
+            <Button fx:id="barButton" mnemonicParsing="false" onAction="#openBarVisualiser" text="PLAY Bars" />
+            <Button fx:id="circleButton" mnemonicParsing="false" onAction="#openCircleVisualiser" text="PLAY Circle" />
          </children>
       </HBox>
    </children>

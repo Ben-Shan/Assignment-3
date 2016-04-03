@@ -1,0 +1,35 @@
+package multiscreeninput;
+
+import javafx.event.ActionEvent;
+import javafx.fxml.FXML;
+import javafx.scene.layout.HBox;
+import javafx.scene.paint.Color;
+import javafx.scene.shape.Circle;
+
+public class CircleController extends VisualController {
+
+    @FXML
+    HBox visHbox;
+    
+    public Circle circle;
+    
+    @FXML
+    void initialize(){
+    	
+    	circle = new Circle(20,  Color.rgb(156,216,255));
+    	System.out.println("circle initialize yo ");
+    }
+	
+	
+	public void update() {
+		double[] mags = mainWindow.getMags();
+		System.out.println("int the circle update " + mags);
+	}
+	
+	public void saveAndClose(ActionEvent event){
+        // mainWindow.getLabelTextProperty().bind(text.textProperty());
+        //((Button)event.getSource()).getScene().getWindow().hide();
+       
+    }
+
+}
