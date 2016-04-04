@@ -9,7 +9,7 @@
    <children>
       <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
          <children>
-            <Label fx:id="label" text="Use to button to edit data" wrapText="true" />
+            <Label fx:id="label" text="press to open visualiser" wrapText="true" />
          </children>
       </HBox>
       <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" spacing="20.0">

@@ -16,8 +16,6 @@ public class Main extends Application {
 
     @Override
     public void start(Stage stage) throws Exception{
-
-    	//setFile(file);
     	
         Parent root = FXMLLoader.load(getClass().getResource("/multiscreeninput/MainWindow.fxml"));
         Scene scene = new Scene(root, 400, 200);

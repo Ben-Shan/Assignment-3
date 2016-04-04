@@ -1,0 +1,179 @@
+package multiscreeninput;
+
+import java.io.File;
+import java.io.IOException;
+import java.util.ArrayList;
+//import java.util.Calendar;
+import java.util.List;
+
+import javafx.animation.AnimationTimer;
+import javafx.beans.property.StringProperty;
+import javafx.beans.value.ChangeListener;
+import javafx.beans.value.ObservableValue;
+import javafx.event.ActionEvent;
+import javafx.event.EventHandler;
+import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Scene;
+import javafx.scene.control.Button;
+import javafx.scene.control.Label;
+import javafx.scene.control.Slider;
+import javafx.scene.input.MouseEvent;
+import javafx.scene.layout.VBox;
+import javafx.scene.media.AudioSpectrumListener;
+import javafx.scene.media.Media;
+import javafx.scene.media.MediaPlayer;
+import javafx.scene.media.MediaPlayer.Status;
+import javafx.scene.media.MediaView;
+import javafx.stage.Modality;
+import javafx.stage.Stage;
+import javafx.util.Duration;
+
+public class MainWindowController {
+
+    @FXML
+    Button barButton;
+
+    @FXML
+    Button circleButton;
+    
+    @FXML
+    Label label;
+    
+    private MediaPlayer player;
+    
+    private String filePath = "src\\audio\\1.mp3";
+
+    private static int bands;
+   
+    private List<VisualController> controllerList = new ArrayList<VisualController>();
+    
+    private double[] magArr;
+    
+    
+    
+    public void openBarVisualiser(ActionEvent event) throws IOException {
+    		    
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("Child.fxml"));
+        VBox newWindow = (VBox)loader.load();
+
+        BarController barController = loader.getController();
+        
+        controllerList.add(barController);
+       
+        barController.setMainWindow(this);
+
+        Stage stage = new Stage();
+
+        //stage.initModality(Modality.NONE);
+        
+        stage.initOwner(barButton.getScene().getWindow());       
+        
+        Scene scene = new Scene(newWindow);
+       
+        stage.setScene(scene);
+        
+        stage.show();   
+        //stage.setFullScreen(true);
+        if(!(player.getStatus().equals(Status.PLAYING))){
+        	player.play();
+        }
+    }
+    
+    
+    public void openCircleVisualiser(ActionEvent event) throws IOException {
+	    
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("Circle.fxml"));
+        VBox newWindow = (VBox)loader.load();
+
+        CircleController circleController = loader.getController();
+        
+        controllerList.add(circleController);
+       
+        circleController.setMainWindow(this);
+        
+        //controller.setMainWindow(this);
+        Stage stage = new Stage();
+
+        //stage.initModality(Modality.NONE);
+        
+        stage.initOwner(barButton.getScene().getWindow());       
+        
+        Scene scene = new Scene(newWindow);
+       
+        stage.setScene(scene);
+        
+        stage.show();   
+        //stage.setFullScreen(true);
+        if(!(player.getStatus().equals(Status.PLAYING))){
+        	player.play();
+        }
+        
+    }
+    
+    private void initMediaPlayer(String filePath){
+    	
+    	System.out.println("should play : " + filePath);
+    	
+    	//change the file to a URI
+    	File myFile = new File(filePath);
+    	String fileURI = myFile.toURI().toString();
+    	System.out.println("the file URI is : " + fileURI);
+    	
+    	Media media = new Media(fileURI);
+    	
+    	player = new MediaPlayer(media);
+    	
+	    bands = player.getAudioSpectrumNumBands();
+	    System.out.println("there are " + getBands() + " bands");
+	    magArr = new double[bands];
+	    
+	    
+	    player.setAudioSpectrumListener(new AudioSpectrumListener() {
+            @Override
+            public void spectrumDataUpdate(double v, double v1, float[] mags, float[] floats1) {
+            	for( int i=0; i<bands; i++){
+            		double magnitude = mags[i]+60;
+            		double magnitude2 = floats1[i]; //magnitude of phases
+            		if(magnitude>0.2){
+            			magArr[i] = magnitude;
+            		}
+            		if(magnitude<0.2){
+            			magArr[i] = 1;
+            		}
+            	}
+            }            
+	    });
+    }
+    
+    @FXML
+    void initialize(){
+    	
+    	initMediaPlayer(filePath);
+    	
+    	new AnimationTimer()
+        {
+            public void handle(long currentNanoTime)
+            {
+                if(controllerList.size() != 0){
+                	for (VisualController v:controllerList){                    
+                		v.update();
+                	}
+                }
+            }
+        }.start();
+    }
+   
+    
+    public double[] getMags(){
+    	return magArr;
+    }
+
+    public int getBands(){
+    	return bands;
+    }
+        
+    public StringProperty getLabelTextProperty() {
+        return label.textProperty();
+    }
+}

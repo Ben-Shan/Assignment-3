@@ -24,26 +24,22 @@ public class CircleController extends VisualController {
     	circles = new Circle[128];
     	for(int i = 0; i<circles.length; i++){
     		circles[i] = new Circle();
-    		circles[i].setStroke(Color.rgb(25, 0, 55));
+    		circles[i].setStroke(Color.rgb((i%25)* 10, 255-((i%25)* 10), (i%25)* 10));
     		circles[i].setRadius(20);
     		circles[i].setFill(Color.TRANSPARENT);
-    		System.out.println("circle initialize ");
+    		System.out.println("circle initialize " + i);
     		visPane.getChildren().add(circles[i]);
     	}
     }
 	
 	public void update() {
 		double[] mags = mainWindow.getMags();
-		//System.out.println("int the circle update " + mags);
+		double[] phases = mainWindow.getPhase();
+		
 		for ( int i=0 ; i<mags.length; i++){
-	    	circles[i].setRadius(mags[i]*30);
+	    	circles[i].setRadius(mags[i]*10);
+	    	circles[i].setStrokeWidth((phases[i]+1));
+	    	//System.out.println("the phase is : " + phases[i]);
     	}
 	}
-	
-	public void saveAndClose(ActionEvent event){
-        // mainWindow.getLabelTextProperty().bind(text.textProperty());
-        //((Button)event.getSource()).getScene().getWindow().hide();
-       
-    }
-
 }
