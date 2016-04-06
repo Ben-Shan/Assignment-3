@@ -34,7 +34,7 @@ public class BarController extends VisualController{
 	    	rects[i] = new Rectangle();
 	    	rects[i].setHeight(2);
 	    	rects[i].setWidth(4);
-	    	rects[i].setFill(Color.rgb((i*2),0,255-(i*2)));
+	    	rects[i].setFill(Color.rgb((i*2),255,255-(i*2)));
 	    
 	    	visHbox.setSpacing(2);
 	    	visHbox.getChildren().add(rects[i]);

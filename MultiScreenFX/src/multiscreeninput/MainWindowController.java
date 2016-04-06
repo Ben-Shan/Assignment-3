@@ -96,7 +96,7 @@ public class MainWindowController {
 
         //stage.initModality(Modality.NONE);
         
-        stage.initOwner(barButton.getScene().getWindow());       
+        stage.initOwner(circleButton.getScene().getWindow());       
         
         Scene scene = new Scene(newWindow);
        
