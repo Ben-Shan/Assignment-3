@@ -8,26 +8,19 @@ import java.util.List;
 
 import javafx.animation.AnimationTimer;
 import javafx.beans.property.StringProperty;
-import javafx.beans.value.ChangeListener;
-import javafx.beans.value.ObservableValue;
 import javafx.event.ActionEvent;
-import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
-import javafx.scene.control.Slider;
-import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.VBox;
 import javafx.scene.media.AudioSpectrumListener;
 import javafx.scene.media.Media;
 import javafx.scene.media.MediaPlayer;
 import javafx.scene.media.MediaPlayer.Status;
-import javafx.scene.media.MediaView;
-import javafx.stage.Modality;
 import javafx.stage.Stage;
-import javafx.util.Duration;
+
 
 public class MainWindowController {
 
@@ -116,7 +109,8 @@ public class MainWindowController {
     	
     	//change the file to a URI
     	File myFile = new File(filePath);
-    	String fileURI = myFile.toURI().toString();
+    	//String fileURI = myFile.toURI().toString();
+    	String fileURI = "file:/C:/Users/Des/Music/Cascada%20-%20Endless%20Summer%20lyrics.mp3";
     	System.out.println("the file URI is : " + fileURI);
     	
     	Media media = new Media(fileURI);

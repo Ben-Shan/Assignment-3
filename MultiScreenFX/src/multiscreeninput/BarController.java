@@ -1,16 +1,9 @@
 package multiscreeninput;
 
-import java.util.Date;
 
-import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.scene.control.Button;
-import javafx.scene.control.Slider;
-import javafx.scene.control.TextField;
 import javafx.scene.effect.Reflection;
 import javafx.scene.layout.HBox;
-import javafx.scene.layout.Pane;
-import javafx.scene.layout.VBox;
 import javafx.scene.paint.Color;
 import javafx.scene.shape.Rectangle;
 
@@ -72,7 +65,6 @@ public class BarController extends VisualController{
     		return (storedMags[i] - difference);
     	}
     	else{
-    		System.out.println("wut");
     		return newMag;
     	}
     }

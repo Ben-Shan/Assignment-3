@@ -46,21 +46,22 @@
                                     <Font name="Dense-Regular" size="24.0" />
                                  </font>
                               </Label>
-                              <Label alignment="CENTER" contentDisplay="CENTER" layoutX="103.0" layoutY="190.0" prefHeight="17.0" prefWidth="123.0" text="Background:" textAlignment="CENTER">
+                              <Label alignment="CENTER" contentDisplay="CENTER" layoutX="78.0" layoutY="185.0" prefHeight="35.0" prefWidth="141.0" text="Background:" textAlignment="CENTER">
                                  <font>
                                     <Font name="Dense-Regular" size="24.0" />
                                  </font>
                               </Label>
-                              <Button fx:id="selectImage" layoutX="247.0" layoutY="239.0" mnemonicParsing="false" text="Select Image">
+                              <Button fx:id="imageButton" layoutX="174.0" layoutY="247.0" mnemonicParsing="false" onAction="#openImageChooser" prefHeight="26.0" prefWidth="114.0" text="Select Image">
                                  <font>
                                     <Font name="Dense-Regular" size="15.0" />
                                  </font>
                               </Button>
-                              <Label alignment="CENTER" contentDisplay="CENTER" layoutX="267.0" layoutY="215.0" prefHeight="24.0" prefWidth="28.0" text="-OR-">
+                              <Label alignment="CENTER" contentDisplay="CENTER" layoutX="281.0" layoutY="215.0" prefHeight="24.0" prefWidth="28.0" text="-OR-">
                                  <font>
                                     <Font name="Dense-Regular" size="18.0" />
                                  </font>
                               </Label>
+                              <Label fx:id="imageLabel" layoutX="197.0" layoutY="301.0" text="Select Image" />
                            </children>
                         </AnchorPane>
                       <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0">
@@ -73,7 +74,7 @@
                                     <Cursor fx:constant="DEFAULT" />
                                  </cursor>
                               </TextField>
-                              <Button fx:id="selectButton" alignment="CENTER" layoutX="188.0" layoutY="103.0" mnemonicParsing="false" text="Select Song">
+                              <Button fx:id="songButton" alignment="CENTER" layoutX="168.0" layoutY="103.0" mnemonicParsing="false" onAction="#openSongChooser" text="Select Song">
                                  <font>
                                     <Font name="Dense-Regular" size="18.0" />
                                  </font>
