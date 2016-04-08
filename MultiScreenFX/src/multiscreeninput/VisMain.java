@@ -13,13 +13,11 @@ public class VisMain extends Application {
 
     @Override
     public void start(Stage stage) throws Exception{
-    	
-        Parent root = FXMLLoader.load(getClass().getResource("/multiscreeninput/MainWindow.fxml"));
-        Scene scene = new Scene(root, 400, 200);
-        stage.setTitle("FXML Welcome");
-        stage.setScene(scene);
-        stage.show();
  
+    	Parent root = FXMLLoader.load(getClass().getResource("/multiscreeninput/application.fxml"));
+    	stage.setTitle("Visualizer Menu");
+    	stage.setScene(new Scene(root, 454,700));
+    	stage.show();
     }
     
     public static void main(String[] args) {

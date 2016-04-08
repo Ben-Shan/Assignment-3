@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ButtonBar?>
+<?import javafx.scene.control.ColorPicker?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Slider?>
+<?import javafx.scene.control.SplitPane?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="706.0" prefWidth="454.0" xmlns="http://javafx.com/javafx/8.0.65" xmlns:fx="http://javafx.com/fxml/1" fx:controller="multiscreeninput.Controller">
+   <children>
+      <BorderPane prefHeight="578.0" prefWidth="454.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <top>
+            <AnchorPane prefHeight="82.0" prefWidth="454.0" BorderPane.alignment="CENTER">
+               <children>
+                  <Label alignment="CENTER" layoutX="-1.0" layoutY="14.0" prefHeight="82.0" prefWidth="454.0" text="Visualiser Menu" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                     <font>
+                        <Font name="Dense-Regular" size="27.0" />
+                     </font>
+                  </Label>
+               </children>
+            </AnchorPane>
+         </top>
+         <center>
+            <AnchorPane prefHeight="424.0" prefWidth="454.0" BorderPane.alignment="CENTER">
+               <children>
+                  <SplitPane dividerPositions="0.6304347826086957" layoutY="21.0" orientation="VERTICAL" prefHeight="402.0" prefWidth="454.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                    <items>
+                      <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="214.0" prefWidth="452.0">
+                           <children>
+                              <Slider fx:id="rgbGreen" layoutX="271.0" layoutY="92.0" max="255.0" visible="false" />
+                              <Slider fx:id="rgbBlue" layoutX="271.0" layoutY="120.0" max="255.0" visible="false" />
+                              <Slider fx:id="rgbRed" layoutX="271.0" layoutY="62.0" max="255.0" visible="false" />
+                              <ComboBox fx:id="combobox" layoutX="139.0" layoutY="37.0" prefHeight="22.0" prefWidth="175.0" promptText="Select Design" />
+                              <ColorPicker fx:id="colorVisualiser" layoutX="226.0" layoutY="122.0" prefHeight="25.0" prefWidth="108.0" promptText="Black" />
+                              <ColorPicker fx:id="colorBackground" layoutX="226.0" layoutY="190.0" prefHeight="25.0" prefWidth="109.0" promptText="Select Colour" />
+                              <Label alignment="CENTER" contentDisplay="CENTER" layoutX="103.0" layoutY="122.0" prefHeight="17.0" prefWidth="123.0" text="Visualiser :" textAlignment="CENTER">
+                                 <font>
+                                    <Font name="Dense-Regular" size="24.0" />
+                                 </font>
+                              </Label>
+                              <Label alignment="CENTER" contentDisplay="CENTER" layoutX="78.0" layoutY="185.0" prefHeight="35.0" prefWidth="141.0" text="Background:" textAlignment="CENTER">
+                                 <font>
+                                    <Font name="Dense-Regular" size="24.0" />
+                                 </font>
+                              </Label>
+                              <Button fx:id="imageButton" layoutX="174.0" layoutY="247.0" mnemonicParsing="false" onAction="#openImageChooser" prefHeight="26.0" prefWidth="114.0" text="Select Image">
+                                 <font>
+                                    <Font name="Dense-Regular" size="15.0" />
+                                 </font>
+                              </Button>
+                              <Label alignment="CENTER" contentDisplay="CENTER" layoutX="281.0" layoutY="215.0" prefHeight="24.0" prefWidth="28.0" text="-OR-">
+                                 <font>
+                                    <Font name="Dense-Regular" size="18.0" />
+                                 </font>
+                              </Label>
+                              <Label fx:id="imageLabel" layoutX="197.0" layoutY="301.0" text="Select Image" />
+                           </children>
+                        </AnchorPane>
+                      <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0">
+                           <children>
+                              <TextField fx:id="selectSongText" alignment="CENTER" editable="false" layoutX="156.0" layoutY="54.0" prefHeight="31.0" prefWidth="141.0" promptText="No Song Selected">
+                                 <font>
+                                    <Font name="Dense-Regular" size="18.0" />
+                                 </font>
+                                 <cursor>
+                                    <Cursor fx:constant="DEFAULT" />
+                                 </cursor>
+                              </TextField>
+                              <Button fx:id="songButton" alignment="CENTER" layoutX="168.0" layoutY="103.0" mnemonicParsing="false" onAction="#openSongChooser" text="Select Song">
+                                 <font>
+                                    <Font name="Dense-Regular" size="18.0" />
+                                 </font>
+                              </Button>
+                           </children>
+                        </AnchorPane>
+                    </items>
+                  </SplitPane>
+               </children>
+            </AnchorPane>
+         </center>
+         <bottom>
+            <ButtonBar prefHeight="40.0" prefWidth="421.0" BorderPane.alignment="CENTER">
+              <buttons>
+                <Button fx:id="playButton" mnemonicParsing="false" prefHeight="40.0" text="Play">
+                     <font>
+                        <Font name="Dense-Regular" size="23.0" />
+                     </font>
+                  </Button>
+              </buttons>
+               <opaqueInsets>
+                  <Insets bottom="50.0" left="50.0" right="50.0" top="50.0" />
+               </opaqueInsets>
+               <BorderPane.margin>
+                  <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+               </BorderPane.margin>
+            </ButtonBar>
+         </bottom>
+      </BorderPane>
+   </children>
+</AnchorPane>

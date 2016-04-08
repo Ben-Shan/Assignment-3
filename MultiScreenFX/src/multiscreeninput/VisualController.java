@@ -2,9 +2,9 @@ package multiscreeninput;
 
 public abstract class VisualController {
 	
-    protected MainWindowController mainWindow;
+    protected Controller mainWindow;
 
-    public void setMainWindow(MainWindowController mainWin){
+    public void setMainWindow(Controller mainWin){
         mainWindow = mainWin;
     }
     
