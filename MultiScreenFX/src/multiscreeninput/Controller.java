@@ -79,6 +79,8 @@ public class Controller {
     private double[] phaseArr;
     
     public boolean playing = false;
+    
+    
 
 	@FXML
 	private void initialize() {
