@@ -1,16 +1,9 @@
 package multiscreeninput;
 
-import java.util.Date;
 
-import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.scene.control.Button;
-import javafx.scene.control.Slider;
-import javafx.scene.control.TextField;
 import javafx.scene.effect.Reflection;
 import javafx.scene.layout.HBox;
-import javafx.scene.layout.Pane;
-import javafx.scene.layout.VBox;
 import javafx.scene.paint.Color;
 import javafx.scene.shape.Rectangle;
 
@@ -47,10 +40,11 @@ public class BarController extends VisualController{
     public void update(){
     	
     	double[] mags = mainWindow.getMags();
-    	System.out.println("stored mags : " + storedMags[1] + "new mags : " + mags[1]);
+    	//System.out.println("stored mags : " + storedMags[1] + "new mags : " + mags[1]);
     	//System.out.println("in the update method" + date.toString());
     	
     	for ( int i=0 ; i<mags.length; i++){
+    		rects[i].setFill(Color.web(mainWindow.getVisColour()));
     		double height = getNewHeight(mags[i],i);
     		//System.out.println("height is : " + height);
     		//System.out.println("mags are :  " + mags[i]);
@@ -65,13 +59,12 @@ public class BarController extends VisualController{
     public double getNewHeight(double newMag, int i){
     	double difference = 0;
     	if(newMag < storedMags[i]){
-    		System.out.println("yo int the thinkg " + newMag + "   " + storedMags[i]);
+    		//System.out.println("yo int the thinkg " + newMag + "   " + storedMags[i]);
     		difference = storedMags[i] - newMag;
     		difference = difference/2;
     		return (storedMags[i] - difference);
     	}
     	else{
-    		System.out.println("wut");
     		return newMag;
     	}
     }
