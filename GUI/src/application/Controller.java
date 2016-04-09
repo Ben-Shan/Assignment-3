@@ -159,6 +159,10 @@ public class Controller {
 	public String getVisCoulour(){
 		return visualiserColour;
 	}
+<<<<<<< HEAD
+
+}
+=======
 	
 	public String getVisType(){
 		return visType;
@@ -171,3 +175,4 @@ public class Controller {
 }
 
 
+>>>>>>> 7bd669ff97c402230a00fdaca9b69a7e8a60f782
