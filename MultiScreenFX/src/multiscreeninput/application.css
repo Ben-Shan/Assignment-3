@@ -7,6 +7,11 @@
     -fx-background-color: black;
 }
 
+@font-face {
+    font-family: Dense;
+    src: url('src/multiscreeninput/Dense.otf');
+}
+
 .label {
     -fx-background: black;
     -fx-background-color: black;
@@ -29,7 +34,7 @@
 	-fx-font-family: "Dense";
 	-fx-font-size: 28pt;
 	-fx-padding: 0;   
-    -fx-border-color: 0;
+    -fx-border-color: transparent;
     -fx-border-width: 0;
     -fx-background-radius: 0;
     -fx-background-color: black;

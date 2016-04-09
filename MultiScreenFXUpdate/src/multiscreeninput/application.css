@@ -29,7 +29,7 @@
 	-fx-font-family: "Dense";
 	-fx-font-size: 28pt;
 	-fx-padding: 0;   
-    -fx-border-color: 0;
+    -fx-border-color: transparent;
     -fx-border-width: 0;
     -fx-background-radius: 0;
     -fx-background-color: black;
