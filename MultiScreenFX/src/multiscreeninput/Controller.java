@@ -25,6 +25,7 @@ import javafx.scene.media.Media;
 import javafx.scene.media.MediaPlayer;
 import javafx.scene.media.MediaPlayer.Status;
 import javafx.scene.paint.Color;
+import javafx.scene.text.Font;
 import javafx.scene.text.TextFlow;
 import javafx.stage.FileChooser;
 import javafx.stage.Stage;
@@ -85,6 +86,11 @@ public class Controller {
 	@FXML
 	private void initialize() {
 	
+		Font.loadFont(
+	    	      Controller.class.getResource("Dense.otf").toExternalForm(), 
+	    	      18
+	    	    );
+		
 		playButton.setOnAction((event) -> {
 			System.out.println("Play");
 	
