@@ -44,35 +44,25 @@
                                     <Font name="Dense-Regular" size="24.0" />
                                  </font>
                               </Label>
-<<<<<<< HEAD
                               <Label alignment="CENTER" contentDisplay="CENTER" layoutX="103.0" layoutY="182.0" prefHeight="17.0" prefWidth="123.0" styleClass="label-title-small" text="Background:" textAlignment="CENTER">
-=======
-                              <Label alignment="CENTER" contentDisplay="CENTER" layoutX="78.0" layoutY="185.0" prefHeight="35.0" prefWidth="141.0" text="Background:" textAlignment="CENTER">
->>>>>>> 7bd669ff97c402230a00fdaca9b69a7e8a60f782
                                  <font>
                                     <Font name="Dense-Regular" size="24.0" />
                                  </font>
                               </Label>
-<<<<<<< HEAD
                               <Button fx:id="selectImage" layoutX="234.0" layoutY="256.0" mnemonicParsing="false" text="Select Image">
-=======
-                              <Button fx:id="imageButton" layoutX="174.0" layoutY="247.0" mnemonicParsing="false" onAction="#openImageChooser" prefHeight="26.0" prefWidth="114.0" text="Select Image">
->>>>>>> 7bd669ff97c402230a00fdaca9b69a7e8a60f782
                                  <font>
                                     <Font name="Dense-Regular" size="15.0" />
                                  </font>
                               </Button>
-<<<<<<< HEAD
                               <Label alignment="CENTER" contentDisplay="CENTER" layoutX="264.0" layoutY="224.0" prefHeight="26.0" prefWidth="35.0" styleClass="label-title-link" text="-OR-">
-=======
-                              <Label alignment="CENTER" contentDisplay="CENTER" layoutX="281.0" layoutY="215.0" prefHeight="24.0" prefWidth="28.0" text="-OR-">
->>>>>>> 7bd669ff97c402230a00fdaca9b69a7e8a60f782
                                  <font>
                                     <Font name="Dense-Regular" size="18.0" />
                                  </font>
                               </Label>
-                              <Label fx:id="imageLabel" layoutX="197.0" layoutY="301.0" text="Select Image" />
                            </children>
+                           <cursor>
+                              <Cursor fx:constant="DEFAULT" />
+                           </cursor>
                         </AnchorPane>
                       <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0" styleClass="background">
                            <children>
@@ -84,11 +74,7 @@
                                     <Cursor fx:constant="DEFAULT" />
                                  </cursor>
                               </TextField>
-<<<<<<< HEAD
                               <Button fx:id="selectButton" alignment="CENTER" layoutX="182.0" layoutY="103.0" mnemonicParsing="false" text="Select Song">
-=======
-                              <Button fx:id="songButton" alignment="CENTER" layoutX="168.0" layoutY="103.0" mnemonicParsing="false" onAction="#openSongChooser" text="Select Song">
->>>>>>> 7bd669ff97c402230a00fdaca9b69a7e8a60f782
                                  <font>
                                     <Font name="Dense-Regular" size="18.0" />
                                  </font>

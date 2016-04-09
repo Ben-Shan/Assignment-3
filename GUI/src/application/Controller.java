@@ -159,10 +159,10 @@ public class Controller {
 	public String getVisCoulour(){
 		return visualiserColour;
 	}
-<<<<<<< HEAD
+
 
 }
-=======
+
 	
 	public String getVisType(){
 		return visType;
