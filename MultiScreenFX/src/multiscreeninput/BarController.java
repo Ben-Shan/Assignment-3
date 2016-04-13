@@ -6,6 +6,7 @@ import javafx.scene.effect.Reflection;
 import javafx.scene.layout.HBox;
 import javafx.scene.paint.Color;
 import javafx.scene.shape.Rectangle;
+import javafx.scene.text.Font;
 
 public class BarController extends VisualController{
 
@@ -22,11 +23,16 @@ public class BarController extends VisualController{
     @FXML
     void initialize() {
     	
+        Font.loadFont(
+        	      BarController.class.getResource("Dense.otf").toExternalForm(), 
+        	      18
+        	    );
+    	
     	rects = new Rectangle[128];
     	for ( int i=0 ; i<rects.length; i++){
 	    	rects[i] = new Rectangle();
-	    	rects[i].setHeight(2);
-	    	rects[i].setWidth(4);
+	    	rects[i].setHeight(3);
+	    	rects[i].setWidth(6);
 	    	rects[i].setFill(Color.rgb((i*2),255,255-(i*2)));
 	    
 	    	visHbox.setSpacing(2);

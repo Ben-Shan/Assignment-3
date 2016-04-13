@@ -52,6 +52,8 @@ public class Controller {
 	
 	@FXML
 	private Label imageLabel;
+	@FXML
+	private Label ErrorLabel;
 	
 	@FXML
 	private ComboBox<String> combobox;
@@ -112,6 +114,11 @@ public class Controller {
 				} catch (Exception e) {
 					e.printStackTrace();
 				}
+			}
+			
+			if(getVisType() == null){
+				ErrorLabel.setText("Please Select a Visualiser Design");
+				
 			}
 		});
 

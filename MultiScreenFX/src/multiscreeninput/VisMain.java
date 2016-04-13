@@ -18,6 +18,8 @@ public class VisMain extends Application {
     	stage.setTitle("Visualizer Menu");
     	stage.setScene(new Scene(root, 454,700));
     	stage.show();
+    	
+    	
     }
     
     public static void main(String[] args) {
