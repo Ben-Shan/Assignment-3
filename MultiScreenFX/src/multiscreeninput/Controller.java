@@ -67,13 +67,11 @@ public class Controller {
 	
 	private String visType;
 	
+	private String imageURI;
 	private String fileURI;
-	private File backgroundFile;
-	
+		
 	private MediaPlayer player;
     
-    private String filePath = "src\\audio\\1.mp3";
-
     private static int bands;
    
     private List<VisualController> controllerList = new ArrayList<VisualController>();
@@ -195,12 +193,24 @@ public class Controller {
 	public void openImageChooser(ActionEvent event) throws IOException{
 		FileChooser fileChooser = new FileChooser();
     	fileChooser.setTitle("Select Image");
-    	//fileChooser.setInitialDirectory(getMusicDirectory());
+    	fileChooser.setInitialDirectory(getPictureDirectory());
     	//might add a filter to only accept certain file extentions 
     	File file = fileChooser.showOpenDialog(songButton.getScene().getWindow());
     	imageLabel.setText(file.toString());
-    	System.out.println(file);
+    	imageURI = file.toURI().toString();
+    	System.out.println("the image is : " + imageURI);
 	}
+	
+private File getPictureDirectory(){
+    	
+    	//Set to Music directory or go to default if cannot access
+    	String userDirectoryString = System.getProperty("user.home");
+    	File pictureDirectory = new File(userDirectoryString+"/Pictures");
+    	if(!pictureDirectory.canRead()) {
+    	    pictureDirectory = new File(userDirectoryString);
+    	}
+    	return pictureDirectory;
+    }
 	
 	
 	public void openCircleVisualiser(ActionEvent event) throws IOException {
