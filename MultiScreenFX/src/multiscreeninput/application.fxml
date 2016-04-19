@@ -29,7 +29,7 @@
          <center>
             <AnchorPane prefHeight="424.0" prefWidth="454.0" BorderPane.alignment="CENTER">
                <children>
-                  <SplitPane dividerPositions="0.6304347826086957" layoutY="21.0" orientation="VERTICAL" prefHeight="402.0" prefWidth="454.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                  <SplitPane dividerPositions="0.5" layoutY="21.0" orientation="VERTICAL" prefHeight="402.0" prefWidth="454.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                     <items>
                       <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="214.0" prefWidth="452.0" styleClass="background">
                            <children>
@@ -37,24 +37,24 @@
                               <Slider fx:id="rgbBlue" layoutX="271.0" layoutY="120.0" max="255.0" visible="false" />
                               <Slider fx:id="rgbRed" layoutX="271.0" layoutY="62.0" max="255.0" visible="false" />
                               <ComboBox fx:id="combobox" layoutX="139.0" layoutY="37.0" prefHeight="22.0" prefWidth="175.0" promptText="Select Design" />
-                              <ColorPicker fx:id="colorVisualiser" layoutX="226.0" layoutY="122.0" prefHeight="30.0" prefWidth="133.0" promptText="Black" styleClass="combo-box" />
-                              <ColorPicker fx:id="colorBackground" layoutX="227.0" layoutY="173.0" prefHeight="29.0" prefWidth="134.0" promptText="Select Colour" />
-                              <Label alignment="CENTER" contentDisplay="CENTER" layoutX="103.0" layoutY="122.0" prefHeight="17.0" prefWidth="123.0" styleClass="label-title-small" text="Visualiser :" textAlignment="CENTER">
+                              <ColorPicker fx:id="colorVisualiser" layoutX="226.0" layoutY="158.0" prefHeight="30.0" prefWidth="133.0" promptText="Black" styleClass="combo-box" />
+                              <ColorPicker fx:id="colorBackground" layoutX="227.0" layoutY="173.0" prefHeight="29.0" prefWidth="134.0" promptText="Select Colour" visible="false" />
+                              <Label alignment="CENTER" contentDisplay="CENTER" layoutX="103.0" layoutY="159.0" prefHeight="17.0" prefWidth="123.0" styleClass="label-title-small" text="Visualiser :" textAlignment="CENTER">
                                  <font>
                                     <Font name="Dense-Regular" size="24.0" />
                                  </font>
                               </Label>
-                              <Label alignment="CENTER" contentDisplay="CENTER" layoutX="86.0" layoutY="170.0" prefHeight="35.0" prefWidth="141.0" styleClass="label-title-small" text="Background:" textAlignment="CENTER">
+                              <Label alignment="CENTER" contentDisplay="CENTER" layoutX="86.0" layoutY="170.0" prefHeight="35.0" prefWidth="141.0" styleClass="label-title-small" text="Background:" textAlignment="CENTER" visible="false">
                                  <font>
                                     <Font name="Dense-Regular" size="24.0" />
                                  </font>
                               </Label>
-                              <Button fx:id="imageButton" layoutX="238.0" layoutY="247.0" mnemonicParsing="false" onAction="#openImageChooser" prefHeight="26.0" prefWidth="114.0" text="Select Image">
+                              <Button fx:id="imageButton" layoutX="238.0" layoutY="247.0" mnemonicParsing="false" onAction="#openImageChooser" prefHeight="26.0" prefWidth="114.0" text="Select Image" visible="false">
                                  <font>
                                     <Font name="Dense-Regular" size="15.0" />
                                  </font>
                               </Button>
-                              <Label alignment="CENTER" contentDisplay="CENTER" layoutX="281.0" layoutY="215.0" prefHeight="24.0" prefWidth="28.0" styleClass="label-title-link" text="-OR-">
+                              <Label alignment="CENTER" contentDisplay="CENTER" layoutX="281.0" layoutY="215.0" prefHeight="24.0" prefWidth="28.0" styleClass="label-title-link" text="-OR-" visible="false">
                                  <font>
                                     <Font name="Dense-Regular" size="18.0" />
                                  </font>
@@ -78,7 +78,7 @@
                                     <Font name="Dense-Regular" size="18.0" />
                                  </font>
                               </Button>
-                              <Button fx:id="playButton" layoutX="366.0" layoutY="162.0" mnemonicParsing="false" prefHeight="40.0" text="Play">
+                              <Button fx:id="playButton" layoutX="357.0" layoutY="237.0" mnemonicParsing="false" prefHeight="40.0" text="Play">
                                  <font>
                                     <Font name="Dense-Regular" size="23.0" />
                                  </font>

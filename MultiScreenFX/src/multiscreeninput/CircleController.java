@@ -37,7 +37,8 @@ public class CircleController extends VisualController {
 		double[] phases = mainWindow.getPhase();
 		
 		for ( int i=0 ; i<mags.length; i++){
-	    	circles[i].setRadius(mags[i]*10);
+	    	circles[i].setStroke(Color.web(mainWindow.getVisColour()));
+			circles[i].setRadius(mags[i]*10);
 	    	circles[i].setStrokeWidth((phases[i]+1));
 	    	//System.out.println("the phase is : " + phases[i]);
     	}

@@ -1,6 +1,6 @@
 package multiscreeninput;
 
-import java.io.File;
+import java.io.File; 
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
@@ -91,7 +91,7 @@ public class Controller {
 		Font.loadFont(
 	    	      Controller.class.getResource("Dense.otf").toExternalForm(), 
 	    	      18
-	    	    );
+	    	    ); //Loads in font for use in GUI
 		
 		playButton.setOnAction((event) -> {
 			System.out.println("Play");
@@ -101,7 +101,7 @@ public class Controller {
 			if(getVisType() == "Circle"){
 				try {
 					System.out.println("in da circle try");
-					openCircleVisualiser(event);
+					openCircleVisualiser(event); //Runs Circle Function
 				} catch (Exception e) {
 					e.printStackTrace();
 				}
@@ -110,15 +110,15 @@ public class Controller {
 			if(getVisType() == "Line"){
 				try {
 					System.out.println("int da bar try");
-					openBarVisualiser(event);
+					openBarVisualiser(event); //Runs Bar Function
 				} catch (Exception e) {
 					e.printStackTrace();
 				}
 			}
 			
 			if(getVisType() == null){
-				ErrorLabel.setText("Please Select a Visualiser Design");
-				
+				ErrorLabel.setText("Please Select a Visualiser Design"); 
+				//Error message when Design not selected and play is clicked
 			}
 		});
 
@@ -126,11 +126,13 @@ public class Controller {
 		    System.out.println("Visualiser:"+colorVisualiser.getValue());
 		    visualiserColour=colorVisualiser.getValue().toString();
 		    System.out.println("yo skrill" + getVisColour());
-		    
+		    //Colour select and designation for Visualiser 
 		});
 		
 		colorBackground.valueProperty().addListener((observable, oldValue, newValue) -> {
 		    System.out.println("Background:"+colorBackground.getValue());
+		    
+		    //Colour select for Background
 		});
 		
 		combobox.getItems().clear();
@@ -138,7 +140,7 @@ public class Controller {
 		combobox.getItems().addAll(
 		            "Circle",
 		            "Line",
-		            "Box");
+		            "Box *DLC*" );//Design Combobox
 		
 		combobox.valueProperty().addListener((observable, oldValue, newValue) -> {
 		    System.out.println(combobox.getValue());
@@ -148,14 +150,14 @@ public class Controller {
 		
 		
 		BooleanBinding booleanBind =(selectSongText.textProperty().isEmpty());
-		playButton.disableProperty().bind(booleanBind);
+		playButton.disableProperty().bind(booleanBind);//Disables button if Song not selected
 		
 		new AnimationTimer(){
 	        public void handle(long currentNanoTime){
 	            if(controllerList.size() != 0){
 	            	for (VisualController v:controllerList){                    
 	            		v.update();
-	            	}
+	            	} //this is a handle to update the visualiser 
 	            }
 	        }
 	    }.start();
@@ -165,16 +167,16 @@ public class Controller {
 		
 		
 		
-    	FileChooser fileChooser = new FileChooser();
+    	FileChooser fileChooser = new FileChooser(); //Selecting the song from computer files
     	fileChooser.setTitle("View Music");
     	fileChooser.setInitialDirectory(getMusicDirectory());
     	//might add a filter to only accept certain file extentions 
     	//setFileExtensionFilter(fileChooser);
     	File file = fileChooser.showOpenDialog(imageButton.getScene().getWindow());
-    	selectSongText.setText(file.toString());
+    	selectSongText.setText(file.toString());//takes selected file location and converts to string
 
     	System.out.println("the song yo selected be " + file);
-    	fileURI = file.toURI().toString();
+    	fileURI = file.toURI().toString();//file to string convertion
 
     	
 	}
@@ -202,7 +204,7 @@ public class Controller {
 	
 	
 	public void openCircleVisualiser(ActionEvent event) throws IOException {
-	    
+	    //Circle Design Function
         FXMLLoader loader = new FXMLLoader(getClass().getResource("Circle.fxml"));
         VBox newWindow = (VBox)loader.load();
 
@@ -215,12 +217,13 @@ public class Controller {
         Stage stage = new Stage();
         
         stage.initOwner(playButton.getScene().getWindow());       
-        
+        //creates new window one play button click
         Scene scene = new Scene(newWindow);
        
         stage.setScene(scene);
         
-        stage.show();   
+        stage.show();  
+        stage.setFullScreen(true);
         
         if(!playing){
         	player.play();
@@ -229,7 +232,7 @@ public class Controller {
     }
 
 	public void openBarVisualiser(ActionEvent event) throws IOException {
-    
+		//Bar design function
 	    FXMLLoader loader = new FXMLLoader(getClass().getResource("Bars.fxml"));
 	    VBox newWindow = (VBox)loader.load();
 	
@@ -246,8 +249,9 @@ public class Controller {
 	    Scene scene = new Scene(newWindow);
 	   
 	    stage.setScene(scene);
-	    
+	    //Creates new window on play button click for bars
 	    stage.show();   
+	    stage.setFullScreen(true);
 	    if(!playing){
         	player.play();
         	playing = true;
