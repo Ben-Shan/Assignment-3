@@ -90,12 +90,12 @@ public class Controller {
 	    	      Controller.class.getResource("Dense.otf").toExternalForm(), 
 	    	      18
 	    	    ); //Loads in font for use in GUI
-		
+		//action event for the play button
 		playButton.setOnAction((event) -> {
 			System.out.println("Play");
-	
-				initMediaPlayer();
-	
+				
+				initMediaPlayer();//call initMediaPlayer method
+			//if statements to check visualiser type
 			if(getVisType() == "Circle"){
 				try {
 					System.out.println("in da circle try");
@@ -119,7 +119,7 @@ public class Controller {
 				//Error message when Design not selected and play is clicked
 			}
 		});
-
+		
 		colorVisualiser.valueProperty().addListener((observable, oldValue, newValue) -> {
 		    System.out.println("Visualiser:"+colorVisualiser.getValue());
 		    visualiserColour=colorVisualiser.getValue().toString();
@@ -174,7 +174,7 @@ public class Controller {
     	selectSongText.setText(file.toString());//takes selected file location and converts to string
 
     	System.out.println("the song yo selected be " + file);
-    	fileURI = file.toURI().toString();//file to string convertion
+    	fileURI = file.toURI().toString();//file to string URI convertion
 
     	
 	}
@@ -215,12 +215,12 @@ private File getPictureDirectory(){
 	
 	public void openCircleVisualiser(ActionEvent event) throws IOException {
 	    //Circle Design Function
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("Circle.fxml"));
-        VBox newWindow = (VBox)loader.load();
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("Circle.fxml"));//loads in the fxml file
+        VBox newWindow = (VBox)loader.load();//creates a vbox and adds the loader
 
-        CircleController circleController = loader.getController();
+        CircleController circleController = loader.getController();//instanciates the controller for the specific visualiser
         
-        controllerList.add(circleController);
+        controllerList.add(circleController);//add instance to the arraylist
        
         circleController.setMainWindow(this);
         
@@ -235,7 +235,7 @@ private File getPictureDirectory(){
         stage.show();  
         stage.setFullScreen(true);
         
-        if(!playing){
+        if(!playing){//if the song is not playing begin playing the song
         	player.play();
         	playing = true;
         }
@@ -272,9 +272,9 @@ private File getPictureDirectory(){
     	
     	Media media = new Media(fileURI);
     	
-    	player = new MediaPlayer(media);
+    	player = new MediaPlayer(media);//creates a new media player with the file URI media
     	
-	    bands = player.getAudioSpectrumNumBands();
+	    bands = player.getAudioSpectrumNumBands();//gets the amount of bands
 	    System.out.println("there are " + getBands() + " bands");
 	    magArr = new double[bands];
 	    phaseArr = new double[bands];
@@ -282,14 +282,14 @@ private File getPictureDirectory(){
 	    //how many times a second the spectrum updates
 	    player.setAudioSpectrumInterval(0.016);
 	    
-	    player.setAudioSpectrumListener(new AudioSpectrumListener() {
+	    player.setAudioSpectrumListener(new AudioSpectrumListener() {//analyses the audio
             @Override
             public void spectrumDataUpdate(double v, double v1, float[] mags, float[] phase) {
             	for( int i=0; i<bands; i++){
-            		double magnitude = mags[i]+60;
+            		double magnitude = mags[i]+60;//sets the magnitude plus 60, as it goes fom -60 to 0
             		//double magnitude2 = floats1[i]; //magnitude of phases
             		phaseArr[i] = phase[i];
-            		if(magnitude>0.1){
+            		if(magnitude>0.1){//adds the magnitude to the array
             			magArr[i] = magnitude;
             		}
             		if(magnitude<0.1){

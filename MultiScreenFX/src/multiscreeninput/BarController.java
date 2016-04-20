@@ -28,18 +28,18 @@ public class BarController extends VisualController{
         	      18
         	    );
     	
-    	rects = new Rectangle[128];
+    	rects = new Rectangle[128]; //set rectangle array
     	for ( int i=0 ; i<rects.length; i++){
-	    	rects[i] = new Rectangle();
+	    	rects[i] = new Rectangle();//add rectangle to array
 	    	rects[i].setHeight(3);
 	    	rects[i].setWidth(6);
 	    	rects[i].setFill(Color.rgb((i*2),255,255-(i*2)));
 	    
-	    	visHbox.setSpacing(2);
-	    	visHbox.getChildren().add(rects[i]);
+	    	visHbox.setSpacing(2);//set the space between each element in the vbox
+	    	visHbox.getChildren().add(rects[i]);//add the rectangle to the vbox
 	    	System.out.println("yo " + i);
 	    }
-    	reflection.setFraction(0.5);
+    	reflection.setFraction(0.5);//adds the rectangle reflection
     	reflection.setTopOffset(5);
     }
     
@@ -47,8 +47,6 @@ public class BarController extends VisualController{
     public void update(){
     	
     	double[] mags = mainWindow.getMags();
-    	//System.out.println("stored mags : " + storedMags[1] + "new mags : " + mags[1]);
-    	//System.out.println("in the update method" + date.toString());
     	
     	for ( int i=0 ; i<mags.length; i++){
     		rects[i].setFill(Color.web(mainWindow.getVisColour()));
